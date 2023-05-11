@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>Login_Page</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Image\Background\background.jpg" />
+    <None Remove="Image\Background\wallpaper.jpg" />
+    <None Remove="Image\dexef.svg" />
+    <None Remove="Image\facebook.svg" />
+    <None Remove="Image\google.svg" />
+    <None Remove="Image\instagram.svg" />
+    <None Remove="Image\twitter.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Wpf.Controls" Version="22.2.3" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="22.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\Background\background.jpg" />
+    <Resource Include="Image\Background\wallpaper.jpg" />
+    <Resource Include="Image\dexef.svg" />
+    <Resource Include="Image\facebook.svg" />
+    <Resource Include="Image\google.svg" />
+    <Resource Include="Image\instagram.svg" />
+    <Resource Include="Image\twitter.svg" />
+  </ItemGroup>
+
+</Project>
