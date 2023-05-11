@@ -154,8 +154,8 @@ Suppliers and accounts management including VAT and currencies" TextWrapping="Wr
                     </StackPanel>
                     <TextBlock Text="Don't Have Account" Foreground="White" FontSize="20" HorizontalAlignment="Center" Margin="0 15 0 0"/>
                     <TextBlock HorizontalAlignment="Center" Margin="0 20 0 0">
-                  <Hyperlink Foreground="#FF0075F4"  TextDecorations="None" FontSize="15">Sign  In</Hyperlink>
-                        <Run  Text="  Here" FontSize="15" Foreground="White"/>
+                  <Hyperlink Foreground="#FF0075F4"  TextDecorations="None" FontSize="15">Sign  up</Hyperlink>
+                   <Run Text="  Here" FontSize="15" Foreground="White"/>
                     </TextBlock>
                 </StackPanel>
               
