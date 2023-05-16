@@ -31,6 +31,14 @@
                     <Setter Property="Background" Value="#FFFBC4C9"/>
                     <Setter Property="Foreground" Value="#FF2D80FC"/>
                 </Trigger>
+           
+
+                <Trigger Property="ClickMode" Value="Press">
+                    <Setter Property="BorderThickness" Value="0 0 0 1.5"/>
+                    <Setter Property="BorderBrush" Value="#FFFDDED6"/>
+                    <Setter Property="Background" Value="#FFFBC4C9"/>
+                    <Setter Property="Foreground" Value="#FF2D80FC"/>
+                </Trigger>
             </Style.Triggers>
         </Style>
 
@@ -97,10 +105,10 @@
                 <!--#endregion-->
                 <!--NavBarButton-->
                 <StackPanel HorizontalAlignment="Left" Margin="80 50 0 0" Grid.Column="1" Orientation="Horizontal">
-                    <dx:SimpleButton  Style="{DynamicResource navbarStyle}"  Width="120" Height="36" Content="Home"/>
-                    <dx:SimpleButton Style="{DynamicResource navbarStyle}" Width="120" Height="36" Content="About"/>
-                    <dx:SimpleButton  Style="{DynamicResource navbarStyle}" Width="120" Height="36" Content="Proudect"/>
-                    <dx:SimpleButton Style="{DynamicResource navbarStyle}" Width="120" Height="36" Content="Contact"/>
+                    <dx:SimpleButton x:Name="home" Click="home_Click" CommandParameter="home" Style="{DynamicResource navbarStyle}"  Width="120" Height="36" Content="Home"/>
+                    <dx:SimpleButton x:Name="about" Click="home_Click" CommandParameter="about" Style="{DynamicResource navbarStyle}" Width="120" Height="36" Content="About"/>
+                    <dx:SimpleButton x:Name="proudect" CommandParameter="proudect" Click="home_Click" Style="{DynamicResource navbarStyle}" Width="120" Height="36" Content="Proudect"/>
+                    <dx:SimpleButton x:Name="contect" CommandParameter="contect" Click="home_Click" Style="{DynamicResource navbarStyle}" Width="120" Height="36" Content="Contact"/>
                 </StackPanel>
                 <!--#endregion-->
                 <dx:SimpleButton Grid.Column="2" Style="{DynamicResource contectbutton}" Margin="0 50 40 0" Width="150" Height="36" Content="Contact"/>
@@ -135,20 +143,20 @@ Suppliers and accounts management including VAT and currencies" TextWrapping="Wr
             </StackPanel>
             
             <!--Login-->
-            <Grid Grid.Column="1"  Grid.Row="1" Width="500" Margin="0 70 0 50">
+            <Grid x:Name="grid" Grid.Column="1"  Grid.Row="1" Width="500" Margin="0 70 0 50">
                 <Border Opacity="0.4" Background="#FF141F3F" CornerRadius="15"/>
 
                 <StackPanel>
                     <TextBlock Text="Login Here" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0 15 0 0"/>
-                    <dxe:TextEdit BorderBrush="#FF141F3F" Height="38"  Margin="20 70 20 0" BorderThickness="0 0 0 1" NullText="UserName" Background="Transparent" Foreground="White" NullTextForeground="White" Padding="10 0 0 0" FontSize="18"/>
-                    <dxe:PasswordBoxEdit BorderBrush="#FF141F3F" Height="38"  Margin="20 50 20 0" BorderThickness="0 0 0 1" NullText="Password" Background="Transparent" Foreground="White" NullTextForeground="White" Padding="10 0 0 0" FontSize="18"/>
-                    <dx:SimpleButton Style="{DynamicResource contectbutton}"  Height="48" Margin="40 60 40 0" CornerRadius="15" Content="Login" FontSize="20" />
+                    <dxe:TextEdit Name="txtuser" BorderBrush="#FF141F3F" Height="38"  Margin="20 70 20 0" BorderThickness="0 0 0 1" NullText="UserName" Background="Transparent" Foreground="White" NullTextForeground="White" Padding="10 0 0 0" FontSize="18"/>
+                    <dxe:PasswordBoxEdit x:Name="txtpass" BorderBrush="#FF141F3F" Height="38"  Margin="20 50 20 0" BorderThickness="0 0 0 1" NullText="Password" Background="Transparent" Foreground="White" NullTextForeground="White" Padding="10 0 0 0" FontSize="18"/>
+                    <dx:SimpleButton x:Name="btnlogin" Click="btnlogin_Click" Style="{DynamicResource contectbutton}"  Height="48" Margin="40 60 40 0" CornerRadius="15" Content="Login" FontSize="20" />
                     <TextBlock Text="Sign In with" FontSize="14" Foreground="White" HorizontalAlignment="Center" Margin="0 20 0 0"/>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="100 20 100 0">
                         <dx:SimpleButton Width="30" Height="30" Glyph="\Image\facebook.svg" Style="{DynamicResource iconbutton}" BorderThickness="0" Background="Transparent" />
                         <dx:SimpleButton Width="30" Height="30" Glyph="\Image\twitter.svg" Style="{DynamicResource iconbutton}" BorderThickness="0" Background="Transparent"   />
                         <dx:SimpleButton Width="30" Height="30" Glyph="\Image\instagram.svg" Style="{DynamicResource iconbutton}" BorderThickness="0" Background="Transparent"  />
-                        <dx:SimpleButton Width="30" Height="30" Glyph="\Image\google.svg" Style="{DynamicResource iconbutton}" BorderThickness="0" Background="Transparent" />
+                        <dx:SimpleButton x:Name="btngoogle"  Width="30" Height="30" Glyph="\Image\google.svg" Style="{DynamicResource iconbutton}" BorderThickness="0" Background="Transparent" />
 
 
                     </StackPanel>

@@ -15,12 +15,15 @@
     <None Remove="Image\facebook.svg" />
     <None Remove="Image\google.svg" />
     <None Remove="Image\instagram.svg" />
+    <None Remove="Image\Splash\s.jpg" />
+    <None Remove="Image\Splash\splashscreen.jpg" />
     <None Remove="Image\twitter.svg" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Wpf.Controls" Version="22.2.3" />
     <PackageReference Include="DevExpress.Wpf.Core" Version="22.2.3" />
+    <PackageReference Include="Facebook" Version="7.0.10-beta" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,7 +33,13 @@
     <Resource Include="Image\facebook.svg" />
     <Resource Include="Image\google.svg" />
     <Resource Include="Image\instagram.svg" />
+    <Resource Include="Image\Splash\s.jpg" />
+    <Resource Include="Image\Splash\splashscreen.jpg" />
     <Resource Include="Image\twitter.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="login\" />
   </ItemGroup>
 
 </Project>
