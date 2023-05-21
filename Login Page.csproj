@@ -45,8 +45,4 @@
     <Resource Include="Image\twitter.svg" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="login\" />
-  </ItemGroup>
-
 </Project>
