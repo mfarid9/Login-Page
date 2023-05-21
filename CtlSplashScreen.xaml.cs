@@ -29,7 +29,7 @@ namespace Login_Page
             for (int i = 0; i <= 100; i++)
             {
                 (sender as BackgroundWorker).ReportProgress(i);
-                Thread.Sleep(80);
+                Thread.Sleep(40);
                 Console.WriteLine("Loading : " + i + "%");
             }
         }

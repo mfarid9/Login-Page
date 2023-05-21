@@ -14,7 +14,10 @@
     <None Remove="Image\dexef.svg" />
     <None Remove="Image\facebook.svg" />
     <None Remove="Image\google.svg" />
+    <None Remove="Image\googlee.svg" />
     <None Remove="Image\instagram.svg" />
+    <None Remove="Image\login.png" />
+    <None Remove="Image\logo.webp" />
     <None Remove="Image\Splash\s.jpg" />
     <None Remove="Image\Splash\splashscreen.jpg" />
     <None Remove="Image\twitter.svg" />
@@ -24,6 +27,7 @@
     <PackageReference Include="DevExpress.Wpf.Controls" Version="22.2.3" />
     <PackageReference Include="DevExpress.Wpf.Core" Version="22.2.3" />
     <PackageReference Include="Facebook" Version="7.0.10-beta" />
+    <PackageReference Include="Haley.Rest" Version="2.0.6.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,7 +36,10 @@
     <Resource Include="Image\dexef.svg" />
     <Resource Include="Image\facebook.svg" />
     <Resource Include="Image\google.svg" />
+    <Resource Include="Image\googlee.svg" />
     <Resource Include="Image\instagram.svg" />
+    <Resource Include="Image\login.png" />
+    <Resource Include="Image\logo.webp" />
     <Resource Include="Image\Splash\s.jpg" />
     <Resource Include="Image\Splash\splashscreen.jpg" />
     <Resource Include="Image\twitter.svg" />

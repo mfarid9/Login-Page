@@ -9,59 +9,28 @@
         Title="MainWindow" Height="768" Width="1200" Background="Transparent" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
 
     <Window.Resources>
-        <Style TargetType="dx:SimpleButton" x:Key="navbarStyle">
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Margin" Value="7 0 0 0"/>
-            <Setter Property="CornerRadius" Value="5 5 0 0"/>
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="Foreground" Value="#FF0A2548"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="BorderThickness" Value="0 0 0 1.5"/>
-                    <Setter Property="BorderBrush" Value="#FFFDDED6"/>
-                    <Setter Property="Background" Value="#FFFBC4C9"/>
-                    <Setter Property="Foreground" Value="#FF2D80FC"/>
-                </Trigger>
-
-                <Trigger Property="IsFocused" Value="True">
-                    <Setter Property="BorderThickness" Value="0 0 0 1.5"/>
-                    <Setter Property="BorderBrush" Value="#FFFDDED6"/>
-                    <Setter Property="Background" Value="#FFFBC4C9"/>
-                    <Setter Property="Foreground" Value="#FF2D80FC"/>
-                </Trigger>
-           
-
-                <Trigger Property="ClickMode" Value="Press">
-                    <Setter Property="BorderThickness" Value="0 0 0 1.5"/>
-                    <Setter Property="BorderBrush" Value="#FFFDDED6"/>
-                    <Setter Property="Background" Value="#FFFBC4C9"/>
-                    <Setter Property="Foreground" Value="#FF2D80FC"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+      
 
         <Style TargetType="dx:SimpleButton" x:Key="contectbutton">
             <Setter Property="BorderThickness" Value="0"/>
          
-            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="CornerRadius" Value="8"/>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Background" Value="White"/>
+            <Setter Property="Background" Value="#FF2A6EFA"/>
            
-            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
 
 
-                    <Setter Property="Background" Value="#FF2D80FC"/>
+                    <Setter Property="Background" Value="#FF306DEB"/>
                     <Setter Property="Foreground" Value="White"/>
                 </Trigger>
 
                 <Trigger Property="IsFocused" Value="True">
 
                     <Setter Property="Foreground" Value="White"/>
-                    <Setter Property="Background" Value="#FF2D80FC"/>
+                    <Setter Property="Background" Value="#FF306DEB"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -80,96 +49,53 @@
             </Style.Triggers>
         </Style> 
     </Window.Resources>
-    <Border>
-        <Border.Background>
-            <ImageBrush ImageSource="\Image\Background\background.jpg"/>
-        </Border.Background>
+    <Border Background="White" CornerRadius="5" >
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <!--NavBar-->
-            <Grid Grid.Row="0" Grid.ColumnSpan="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <!--Logo-->
-                <dx:DXImage Source="\Image\dexef.svg" Width="150" HorizontalAlignment="Left" Margin="40 50 0 0"/>
-                <!--#endregion-->
-                <!--NavBarButton-->
-                <StackPanel HorizontalAlignment="Left" Margin="80 50 0 0" Grid.Column="1" Orientation="Horizontal">
-                    <dx:SimpleButton x:Name="home" Click="home_Click" CommandParameter="home" Style="{DynamicResource navbarStyle}"  Width="120" Height="36" Content="Home"/>
-                    <dx:SimpleButton x:Name="about" Click="home_Click" CommandParameter="about" Style="{DynamicResource navbarStyle}" Width="120" Height="36" Content="About"/>
-                    <dx:SimpleButton x:Name="proudect" CommandParameter="proudect" Click="home_Click" Style="{DynamicResource navbarStyle}" Width="120" Height="36" Content="Proudect"/>
-                    <dx:SimpleButton x:Name="contect" CommandParameter="contect" Click="home_Click" Style="{DynamicResource navbarStyle}" Width="120" Height="36" Content="Contact"/>
-                </StackPanel>
-                <!--#endregion-->
-                <dx:SimpleButton Grid.Column="2" Style="{DynamicResource contectbutton}" Margin="0 50 40 0" Width="150" Height="36" Content="Contact"/>
-            </Grid>
-            <!--#endregion-->
+            <Border >
+                <Border.Background>
+                    <ImageBrush ImageSource="\Image\logo.webp"/>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Log in" FontSize="25" Margin="20 60 0 0"/>
+                <TextBlock Text="UserName" FontWeight="Normal" FontSize="16" Margin="20 25 0 0" Foreground="#FF212529"/>
+                <dxe:TextEdit x:Name="txtuser" Margin="40 25 40 0" Height="36" BorderBrush="#FFDEE2E6" BorderThickness="1" CornerRadius="8" NullText="UserName" Padding="10 0 0 0"/>
 
-            <StackPanel Grid.Row="1" Width="540" Margin="40 150 0 50" HorizontalAlignment="Left">
-                <TextBlock Text="The power to change everything" Width="auto"  FontSize="37" Foreground="#FF0075F4" />
-                <TextBlock Text="Extreme accounting software in" Margin="0 15 0 0"  FontSize="20" FontWeight="Normal" Foreground="#FFFF6600" />
-                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
-                    <Grid>
-                        <Border Width="150" Height="40" BorderBrush="#FFFF6600" Background="#FFFF6600" Opacity=".2" BorderThickness="1" CornerRadius="10"/>
-                    <TextBlock  Text="The luxury of information" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFF6600"/>
-                    </Grid>
-                    <Grid Margin="15 0 0 0">
-                        <Border Width="60" Height="40" BorderBrush="#FF0075F4" Background="#FF0075F4" Opacity=".2" BorderThickness="1" CornerRadius="10"/>
-                        <TextBlock  Text="Precision" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF0075F4"/>
-                    </Grid>
+                <TextBlock Text="Password" FontWeight="Normal" FontSize="16" Margin="20 25 0 0" Foreground="#FF212529"/>
+                <dxe:PasswordBoxEdit Margin="40 25 40 0" x:Name="txtpass" Height="36" BorderBrush="#FFDEE2E6" BorderThickness="1" CornerRadius="8" NullText="Password" Padding="10 0 0 0"/>
 
-                    <Grid Margin="15 0 0 0">
-                        <Border Width="80" Height="40" BorderBrush="#FF52A87A" Background="#FF52A87A" Opacity=".2" BorderThickness="1" CornerRadius="10"/>
-                        <TextBlock  Text="Simplicity" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF52A87A"/>
-                    </Grid>
+                <dx:SimpleButton x:Name="btnlogin" Click="btnlogin_Click" Style="{DynamicResource contectbutton}"  Height="48" Margin="40 60 40 0"  Content="Log in" FontSize="20" />
+
+                <Border Height="1" Margin="20 80 20 0" Background="#FFF0F1F2"/>
+                <dx:SimpleButton Style="{DynamicResource iconbutton}" Height="36" Width="180" Margin="0 30 0 0" FontSize="14" Content="Create New Account"/>
+
+                <TextBlock Text="Or" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 30 0 0">
+                    <dx:SimpleButton x:Name="btngoogle" Click="btngoogle_Click" Height="36" Width="110" CornerRadius="5" BorderBrush="#FF2A6EFA">
+                        <dx:SimpleButton.Content>
+                            <StackPanel Orientation="Horizontal" >
+                                <dx:DXImage Source="\Image\googlee.svg" Width="15"/>
+                                <TextBlock Text="Google" VerticalAlignment="Center" Margin="5 0 0 0" Foreground="#FF2A6EFA"/>
+                            </StackPanel>
+                        </dx:SimpleButton.Content>
+                    </dx:SimpleButton>
+                    <dx:SimpleButton Height="36" Width="110" CornerRadius="5" BorderBrush="#FF2A6EFA" Margin="15 0 0 0" Click="SimpleButton_Click">
+                        <dx:SimpleButton.Content>
+                            <StackPanel Orientation="Horizontal" >
+                                <dx:DXImage Source="\Image\facebook.svg" Width="15"/>
+                                <TextBlock Text="Facebook" VerticalAlignment="Center" Margin="5 0 0 0" Foreground="#FF2A6EFA"/>
+                            </StackPanel>
+                        </dx:SimpleButton.Content>
+                    </dx:SimpleButton>
+
                 </StackPanel>
-                <Grid  Height="120" Margin="0 15 0 0">
-                    <Border Background="White" Opacity="0.7" CornerRadius="15"/>
-                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="An ideal program for small and medium-sized businesses. It is easy for employees to complete a process
-Sell ​​as soon as possible. The cashier program includes warehouse management and customer account management
-Suppliers and accounts management including VAT and currencies" TextWrapping="Wrap" FontSize="16"  />
-                </Grid>
-         
             </StackPanel>
             
-            <!--Login-->
-            <Grid x:Name="grid" Grid.Column="1"  Grid.Row="1" Width="500" Margin="0 70 0 50">
-                <Border Opacity="0.4" Background="#FF141F3F" CornerRadius="15"/>
-
-                <StackPanel>
-                    <TextBlock Text="Login Here" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0 15 0 0"/>
-                    <dxe:TextEdit Name="txtuser" BorderBrush="#FF141F3F" Height="38"  Margin="20 70 20 0" BorderThickness="0 0 0 1" NullText="UserName" Background="Transparent" Foreground="White" NullTextForeground="White" Padding="10 0 0 0" FontSize="18"/>
-                    <dxe:PasswordBoxEdit x:Name="txtpass" BorderBrush="#FF141F3F" Height="38"  Margin="20 50 20 0" BorderThickness="0 0 0 1" NullText="Password" Background="Transparent" Foreground="White" NullTextForeground="White" Padding="10 0 0 0" FontSize="18"/>
-                    <dx:SimpleButton x:Name="btnlogin" Click="btnlogin_Click" Style="{DynamicResource contectbutton}"  Height="48" Margin="40 60 40 0" CornerRadius="15" Content="Login" FontSize="20" />
-                    <TextBlock Text="Sign In with" FontSize="14" Foreground="White" HorizontalAlignment="Center" Margin="0 20 0 0"/>
-                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="100 20 100 0">
-                        <dx:SimpleButton Width="30" Height="30" Glyph="\Image\facebook.svg" Style="{DynamicResource iconbutton}" BorderThickness="0" Background="Transparent" />
-                        <dx:SimpleButton Width="30" Height="30" Glyph="\Image\twitter.svg" Style="{DynamicResource iconbutton}" BorderThickness="0" Background="Transparent"   />
-                        <dx:SimpleButton Width="30" Height="30" Glyph="\Image\instagram.svg" Style="{DynamicResource iconbutton}" BorderThickness="0" Background="Transparent"  />
-                        <dx:SimpleButton x:Name="btngoogle"  Width="30" Height="30" Glyph="\Image\google.svg" Style="{DynamicResource iconbutton}" BorderThickness="0" Background="Transparent" />
-
-
-                    </StackPanel>
-                    <TextBlock Text="Don't Have Account" Foreground="White" FontSize="20" HorizontalAlignment="Center" Margin="0 15 0 0"/>
-                    <TextBlock HorizontalAlignment="Center" Margin="0 20 0 0">
-                  <Hyperlink Foreground="#FF0075F4"  TextDecorations="None" FontSize="15">Sign  up</Hyperlink>
-                   <Run Text="  Here" FontSize="15" Foreground="White"/>
-                    </TextBlock>
-                </StackPanel>
-              
-            </Grid>
-            <!--#endregion-->
         </Grid>
-
     </Border>
 </Window>

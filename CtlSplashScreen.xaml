@@ -9,7 +9,7 @@
         WindowStyle="None"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         WindowStartupLocation="CenterScreen"
-        Title="CtlSplashScreen" FontFamily="Georgia" ContentRendered="Window_ContentRendered"  Height="450" Width="750">
+        Title="CtlSplashScreen" FontFamily="Georgia" ContentRendered="Window_ContentRendered"  Height="700" Width="1100">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="\Image\Splash\s.jpg"/>
