@@ -15,7 +15,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using static Login_Page.MainWindow;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
-
+using Google.Apis.Auth;
+using System.Diagnostics;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Util.Store;
+using System.IO;
+using System.Threading;
 
 namespace Login_Page
 {
@@ -24,12 +29,43 @@ namespace Login_Page
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string clientSecret = "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";
+        private string[] scopes = { "email", "profile" };
+        private string clientId = "197199036663-n0l6pc54fvj8ea7ovt83qj3hof17hifi.apps.googleusercontent.com";
+        private async void btngoogle_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    new ClientSecrets
+                    {
+                        ClientId = clientId,
+                        ClientSecret = clientSecret
+                    },
+                    scopes,
+                    "user",
+                    CancellationToken.None,
+                    new FileDataStore("token.json", true)
+                );
+
+                string accessToken = await credential.GetAccessTokenForRequestAsync();
+
+                Use the obtained access token as needed
+
+                MessageBox.Show("Login successful");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+
+            }
+        }
         public MainWindow()
         {
             InitializeComponent();
             //home.ClickMode = ClickMode.Press;
         }
-
+     
         private async void btnlogin_Click(object sender, RoutedEventArgs e)
         {
             var client = new HttpClient();
@@ -79,30 +115,30 @@ namespace Login_Page
             public string Result { get; set; }
         }
 
-        private async void btngoogle_Click(object sender, RoutedEventArgs e)
-        {
-            var client = new HttpClient();
+        //private async void btngoogle_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var client = new HttpClient();
 
-            // Set the HttpClient object's base address to the URL of the API.
-            client.BaseAddress = new Uri("https://localhost:7206");
+        //    // Set the HttpClient object's base address to the URL of the API.
+        //    client.BaseAddress = new Uri("https://localhost:7206");
 
 
-            // Make the HTTP request to the API.
-            //  var response = await client.GetAsync();
-            var response = await client.GetAsync("/ExternalLogin?AuthScheme=google");
-            // Check the   status code.
-            if (response.StatusCode != System.Net.HttpStatusCode.OK)
-            {
-                throw new Exception("The API returned an error.");
-            }
+        //    // Make the HTTP request to the API.
+        //    //  var response = await client.GetAsync();
+        //    var response = await client.GetAsync("/ExternalLogin?AuthScheme=google");
+        //    // Check the   status code.
+        //    if (response.StatusCode != System.Net.HttpStatusCode.OK)
+        //    {
+        //        throw new Exception("The API returned an error.");
+        //    }
 
-            // Get the response body as a string.
-            var body = await response.Content.ReadAsStringAsync();
+        //    // Get the response body as a string.
+        //    var body = await response.Content.ReadAsStringAsync();
 
-            var res = System.Text.Json.JsonSerializer.Deserialize<GoogleResponse>(body);
+        //    var res = System.Text.Json.JsonSerializer.Deserialize<GoogleResponse>(body);
 
-            Process.Start(@"C:\Program Files\Google\Chrome\Application\chrome.exe", res.Result);
-        }
+        //    Process.Start(@"C:\Program Files\Google\Chrome\Application\chrome.exe", res.Result);
+        //}
 
         private async void SimpleButton_Click(object sender, RoutedEventArgs e)
         {
