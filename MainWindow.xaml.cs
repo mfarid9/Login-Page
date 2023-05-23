@@ -46,7 +46,6 @@ namespace Login_Page
                 string accessToken = await credential.GetAccessTokenForRequestAsync();
 
 
-                MessageBox.Show("Login successful");
             }
             catch (Exception ex)
             {
