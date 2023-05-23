@@ -12,6 +12,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
+using static Login_Page.MainWindow;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 
@@ -55,6 +56,7 @@ namespace Login_Page
                     ctlStart.Show();
             }
             else {
+                
                    System.Windows.MessageBox.Show(res.Message);
 
             }
@@ -90,19 +92,13 @@ namespace Login_Page
 
             public string Message { get; set; }
             [JsonPropertyName("result")]
-
-            public Result result { get; set; }
-
-
-            public class Result
-            {
-            string token { get; set; }  
-            DateTime expiration { get; set; }
+            public string Token { get; set; }
+            public DateTime Expiration { get; set; }
 
 
+          
         }
-        }
-
+      
         class GoogleResponse
         {
             [JsonPropertyName("status")]
