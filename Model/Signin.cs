@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Login_Page
+namespace Login_Page.Model
 {
     public class Signin
     {

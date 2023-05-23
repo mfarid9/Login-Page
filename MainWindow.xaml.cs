@@ -1,6 +1,7 @@
 ﻿using Haley.Abstractions;
 using Haley.Models;
 using Haley.Utils;
+using Login_Page.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -61,44 +62,11 @@ namespace Login_Page
 
             }
 
-
-            //if (txtuser.Text == "admin" && txtpass.Text == "123")
-            //{
-
-            //    // TODO: Authenticate the user and login them to your application.
-
-
-
-            //    // Close this window.
-            //    this.Hide();
-            //    CtlStartPage ctlStart = new CtlStartPage();
-            //    ctlStart.Show();
-            //}
-            //else
-            //{
-
-            //    System.Windows.MessageBox.Show("Invalid username or password.");
-            //}
         }
+        
 
 
 
-
-        class SigninResponse
-        {
-            [JsonPropertyName("status")]
-            public bool Status { get; set; }
-            [JsonPropertyName("message")]
-
-            public string Message { get; set; }
-            [JsonPropertyName("result")]
-            public string Token { get; set; }
-            public DateTime Expiration { get; set; }
-
-
-          
-        }
-      
         class GoogleResponse
         {
             [JsonPropertyName("status")]
