@@ -50,9 +50,12 @@ namespace Login_Page
 
                 string accessToken = await credential.GetAccessTokenForRequestAsync();
 
-                Use the obtained access token as needed
-
+                //  Use the obtained access token as needed
+                this.Hide();
+                CtlStartPage ctlStart = new CtlStartPage();
+                ctlStart.Show();
                 MessageBox.Show("Login successful");
+
             }
             catch (Exception ex)
             {
