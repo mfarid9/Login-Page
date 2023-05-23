@@ -6,10 +6,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 
 namespace Login_Page
@@ -25,32 +28,80 @@ namespace Login_Page
             //home.ClickMode = ClickMode.Press;
         }
 
-        private void btnlogin_Click(object sender, RoutedEventArgs e)
+        private async void btnlogin_Click(object sender, RoutedEventArgs e)
         {
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7206");
+           
+            Signin sign = new Signin();
+            sign.Email = txtuser.Text;
+            sign.Password = txtpass.Text;
+            string jsonPayload = JsonSerializer.Serialize(sign);
+            var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-            if (txtuser.Text == "admin" && txtpass.Text == "123")
+            var response = await client.PostAsync("/Signin", content);
+
+            if (response.StatusCode != System.Net.HttpStatusCode.OK)
             {
+                throw new Exception("The API returned an error.");
+            }
+            var body = await response.Content.ReadAsStringAsync();
 
-                // TODO: Authenticate the user and login them to your application.
-
-
-
-                // Close this window.
+            var res = System.Text.Json.JsonSerializer.Deserialize<SigninResponse>(body);
+            if (res.Status)
+            {
                 this.Hide();
-                CtlStartPage ctlStart = new CtlStartPage();
-                ctlStart.Show();
+                    CtlStartPage ctlStart = new CtlStartPage();
+                    ctlStart.Show();
             }
-            else
-            {
+            else {
+                   System.Windows.MessageBox.Show(res.Message);
 
-                System.Windows.MessageBox.Show("Invalid username or password.");
             }
+
+
+            //if (txtuser.Text == "admin" && txtpass.Text == "123")
+            //{
+
+            //    // TODO: Authenticate the user and login them to your application.
+
+
+
+            //    // Close this window.
+            //    this.Hide();
+            //    CtlStartPage ctlStart = new CtlStartPage();
+            //    ctlStart.Show();
+            //}
+            //else
+            //{
+
+            //    System.Windows.MessageBox.Show("Invalid username or password.");
+            //}
         }
 
 
 
 
+        class SigninResponse
+        {
+            [JsonPropertyName("status")]
+            public bool Status { get; set; }
+            [JsonPropertyName("message")]
 
+            public string Message { get; set; }
+            [JsonPropertyName("result")]
+
+            public Result result { get; set; }
+
+
+            public class Result
+            {
+            string token { get; set; }  
+            DateTime expiration { get; set; }
+
+
+        }
+        }
 
         class GoogleResponse
         {
