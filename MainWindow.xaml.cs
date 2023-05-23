@@ -1,4 +1,6 @@
-﻿using Haley.Abstractions;
+﻿using Google.Apis.Auth.OAuth2;
+using Google.Apis.Util.Store;
+using Haley.Abstractions;
 using Haley.Models;
 using Haley.Utils;
 using Login_Page.Model;
@@ -11,16 +13,9 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using static Login_Page.MainWindow;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
-using Google.Apis.Auth;
-using System.Diagnostics;
-using Google.Apis.Auth.OAuth2;
-using Google.Apis.Util.Store;
-using System.IO;
-using System.Threading;
 
 namespace Login_Page
 {
@@ -50,7 +45,6 @@ namespace Login_Page
 
                 string accessToken = await credential.GetAccessTokenForRequestAsync();
 
-                Use the obtained access token as needed
 
                 MessageBox.Show("Login successful");
             }
@@ -65,12 +59,12 @@ namespace Login_Page
             InitializeComponent();
             //home.ClickMode = ClickMode.Press;
         }
-     
+
         private async void btnlogin_Click(object sender, RoutedEventArgs e)
         {
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7206");
-           
+
             Signin sign = new Signin();
             sign.Email = txtuser.Text;
             sign.Password = txtpass.Text;
@@ -89,17 +83,18 @@ namespace Login_Page
             if (res.Status)
             {
                 this.Hide();
-                    CtlStartPage ctlStart = new CtlStartPage();
-                    ctlStart.Show();
+                CtlStartPage ctlStart = new CtlStartPage();
+                ctlStart.Show();
             }
-            else {
-                
-                   System.Windows.MessageBox.Show(res.Message);
+            else
+            {
+
+                System.Windows.MessageBox.Show(res.Message);
 
             }
 
         }
-        
+
 
 
 
