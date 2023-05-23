@@ -1,11 +1,11 @@
-﻿<Window x:Class="Login_Page.CtlStartPage"
+﻿ <Window x:Class="Login_Page.CtlStartPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Login_Page" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         mc:Ignorable="d" AllowsTransparency="True" Background="Transparent" WindowStyle="None" 
-        Title="CtlStartPage" Width="auto" Height="auto" MinHeight="768" MinWidth="1200" FontFamily="Georgia">
+        Title="CtlStartPage" Width="auto" Height="auto" MinHeight="950" MinWidth="1200" FontFamily="Georgia">
     <Window.Resources>
         <Style TargetType="dx:SimpleButton" x:Key="navbarStyle">
             <Setter Property="BorderThickness" Value="0"/>
@@ -41,7 +41,7 @@
         </Style>
 
     </Window.Resources>
-    <Border MouseDown="Border_MouseDown" Background="White" CornerRadius="5" >
+    <Border MouseDown="Border_MouseDown" Background="#FFF4F5F9" CornerRadius="5" >
         <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
@@ -53,14 +53,14 @@
                 <!--#endregion-->
                 <!--NavBarButton-->
                 <StackPanel HorizontalAlignment="Center" Margin="180 30 0 0" Grid.Column="1" Orientation="Horizontal">
-                    <dx:SimpleButton Click="home_Click" Style="{DynamicResource navbarStyle}" x:Name="home"  CommandParameter="home"  Width="120" Height="36" Content="Home"/>
-                    <dx:SimpleButton Click="home_Click" Style="{DynamicResource navbarStyle}" x:Name="about" CommandParameter="about"  Width="120" Height="36" Content="About"/>
-                    <dx:SimpleButton Click="home_Click" Style="{DynamicResource navbarStyle}" x:Name="proudect" CommandParameter="proudect"  Width="120" Height="36" Content="Proudect"/>
-                    <dx:SimpleButton Click="home_Click" Style="{DynamicResource navbarStyle}" x:Name="contect" CommandParameter="contect"  Width="120" Height="36" Content="Contact"/>
+                    <dx:SimpleButton Click="home_Click" Style="{DynamicResource navbarStyle}" Command="{Binding ChangeMenuCommand}" CommandParameter="Home" x:Name="home"   Width="120" Height="36" Content="Home"/>
+                    <dx:SimpleButton Click="home_Click" Style="{DynamicResource navbarStyle}" x:Name="proudect" CommandParameter="Proudect" Command="{Binding ChangeMenuCommand}"  Width="120" Height="36" Content="Proudect"/>
+                    <dx:SimpleButton Click="home_Click" Style="{DynamicResource navbarStyle}" Command="{Binding ChangeMenuCommand}" x:Name="about" CommandParameter="About"  Width="120" Height="36" Content="About"/>
+                    <dx:SimpleButton Click="home_Click" Style="{DynamicResource navbarStyle}" x:Name="contect" CommandParameter="Contect" Command="{Binding ChangeMenuCommand}"  Width="120" Height="36" Content="Contact"/>
                 </StackPanel>
             </StackPanel>
 
-            <ContentControl Grid.Row="1" Name="usercontrol"/>
+            <ContentControl Grid.Row="1" x:Name="usercontrol" Content="{Binding Menucontrol,UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </Border>
 </Window>

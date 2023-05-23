@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Login_Page.View.Control.CtlAbout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Login_Page.View.Control"
+             mc:Ignorable="d" 
+             Height="900" Width="1200" Background="#FFF4F5F9" FontFamily="Georgia">
+    <UserControl.Resources>
+
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBlock Foreground="#FF2A7CFC" Text="About Dexef" HorizontalAlignment="Center" FontSize="35" Margin="0 10 0 0"/>
+        <TextBlock Text="We are proud of over 14 years of experience at your service." HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="12"/>
+            <StackPanel Margin="40 40 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Grid Width="450" Height="130" >
+                    <Border Background="#EBEBEb" CornerRadius="8" Opacity="0.3" />
+                    <StackPanel>
+                        <TextBlock  Text="Our goal" FontSize="16" Margin="15 10 0 0"/>
+                        <TextBlock  Text="We look forward to the development of Arab and Muslim companies to be able to properly manage their resources and employ them to be world leading companies " FontSize="16" Margin="15 20 0 0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Width="450" Height="130" Margin="10 0 0 0">
+                    <Border Background="#EBEBEb" CornerRadius="8" Opacity="0.3" />
+                    <StackPanel>
+                        <TextBlock  Text="Our message" FontSize="16" Margin="15 10 0 0"/>
+                        <TextBlock  Text="The company has been working in the field of designing and developing financial and commercial programs since 2004 and is generally specialized in managing the company's resources" FontSize="16" Margin="15 20 0 0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+           
+            <Grid Width="530" Height="110" Margin="50 40 0 0" HorizontalAlignment="Left">
+                <Border Background="White" BorderBrush="#FFF3F3F3" BorderThickness="2" CornerRadius="8" Opacity="1" />
+                <StackPanel>
+                    <TextBlock  Text="2008 The number of employees exceeded the barrier of 20 employees" FontSize="16" Margin="15 10 0 0"/>
+                    <TextBlock  Text="A department for technical support and another for customer follow-up were established, in addition to the sales and development departments" FontSize="16" Margin="15 20 0 0" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+            <Grid Width="530" Height="110" Margin="0 40 50 0" HorizontalAlignment="Right">
+                <Border Background="White" BorderBrush="#FFF3F3F3" BorderThickness="2" CornerRadius="8" Opacity="1" />
+                <StackPanel>
+                    <TextBlock  Text="2009 The first sales outside Egypt" FontSize="16" Margin="15 10 0 0"/>
+                    <TextBlock  Text="Our first sales outside Egypt were in the Kingdom of Saudi Arabia, and at the end of the year, the number of our clients outside Egypt exceeded 60 clients" FontSize="16" Margin="15 20 0 0" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Width="530" Height="110" Margin="50 40 0 0" HorizontalAlignment="Left">
+                <Border Background="White" BorderBrush="#FFF3F3F3" BorderThickness="2" CornerRadius="8" Opacity="1" />
+                <StackPanel>
+                    <TextBlock  Text="2009 The first sales outside Egypt" FontSize="16" Margin="15 10 0 0"/>
+                    <TextBlock  Text="Our first sales outside Egypt were in the Kingdom of Saudi Arabia, and at the end of the year, the number of our clients outside Egypt exceeded 60 clients" FontSize="16" Margin="15 20 0 0" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+            <Grid Width="530" Height="110" Margin="0 40 50 0" HorizontalAlignment="Right">
+   
+                <Border x:Name="s" Background="White" BorderBrush="#FFF3F3F3" BorderThickness="2" CornerRadius="8" Opacity="1" >
+            
+                </Border>
+                <StackPanel>
+                    <TextBlock  Text="2010 The establishment of the first branch outside Egypt" FontSize="16" Margin="15 10 0 0"/>
+                    <TextBlock  Text="On March 9, 2010, our first branch was established in the Kingdom of Saudi Arabia, and another branch was opened in Iraq at the end of the 12th month of the same year." FontSize="16" Margin="15 20 0 0" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

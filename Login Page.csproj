@@ -11,13 +11,20 @@
   <ItemGroup>
     <None Remove="Image\Background\background.jpg" />
     <None Remove="Image\Background\wallpaper.jpg" />
+    <None Remove="Image\blue.png" />
     <None Remove="Image\dexef.svg" />
+    <None Remove="Image\download.svg" />
     <None Remove="Image\facebook.svg" />
     <None Remove="Image\google.svg" />
     <None Remove="Image\googlee.svg" />
+    <None Remove="Image\green.png" />
+    <None Remove="Image\info.svg" />
     <None Remove="Image\instagram.svg" />
     <None Remove="Image\login.png" />
     <None Remove="Image\logo.webp" />
+    <None Remove="Image\mortarboard.svg" />
+    <None Remove="Image\one.png" />
+    <None Remove="Image\red.png" />
     <None Remove="Image\Splash\s.jpg" />
     <None Remove="Image\Splash\splashscreen.jpg" />
     <None Remove="Image\twitter.svg" />
@@ -33,13 +40,20 @@
   <ItemGroup>
     <Resource Include="Image\Background\background.jpg" />
     <Resource Include="Image\Background\wallpaper.jpg" />
+    <Resource Include="Image\blue.png" />
     <Resource Include="Image\dexef.svg" />
+    <Resource Include="Image\download.svg" />
     <Resource Include="Image\facebook.svg" />
     <Resource Include="Image\google.svg" />
     <Resource Include="Image\googlee.svg" />
+    <Resource Include="Image\green.png" />
+    <Resource Include="Image\info.svg" />
     <Resource Include="Image\instagram.svg" />
     <Resource Include="Image\login.png" />
     <Resource Include="Image\logo.webp" />
+    <Resource Include="Image\mortarboard.svg" />
+    <Resource Include="Image\one.png" />
+    <Resource Include="Image\red.png" />
     <Resource Include="Image\Splash\s.jpg" />
     <Resource Include="Image\Splash\splashscreen.jpg" />
     <Resource Include="Image\twitter.svg" />

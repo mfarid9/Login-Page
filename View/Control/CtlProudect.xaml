@@ -1,0 +1,117 @@
+﻿<UserControl x:Class="Login_Page.View.Control.CtlProudect"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Login_Page.View.Control"
+             mc:Ignorable="d" 
+            Height="900" Width="950" Background="#FFF4F5F9" FontFamily="Georgia">
+    <UserControl.Resources>
+        <Style TargetType="dx:SimpleButton">
+            <Setter Property="Foreground" Value="#FF2174D5"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF2174D5"/>
+                    <Setter Property="Foreground" Value="#ffffff"/>
+                </Trigger>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="Background" Value="#FF2174D5"/>
+                    <Setter Property="Foreground" Value="#ffffff"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#FF2174D5"/>
+                    <Setter Property="Foreground" Value="#ffffff"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="40 20 40 0">
+            <Border Background="#ffffff" Width="250" Height="280"  CornerRadius="8">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth=".5" Color="#FFECEDF2"/>
+                </Border.Effect>
+                <StackPanel>
+                    <dx:DXImage Width="80" Height="50" Margin="0 10 0 0" Source="\Image\green.png"/>
+                    <TextBlock Text="GREEN" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <TextBlock Text="14.2.0" FontWeight="Bold" Foreground="#FF2174D5" FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <TextBlock TextWrapping="Wrap" Text="This version is suitable for large-scale businesses that deal with an infinite number of branches, warehouses, and item types (inventory, collection, finished product, service, serial inventory, expiration date inventory, consignment goods, clothes and shoes)" FontWeight="Bold"  FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <dx:SimpleButton Width="180" Height="36" Margin="0 30 0 0" CornerRadius="8" Content="Download"  BorderBrush="#FF2174D5"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#ffffff" Margin="40 0 0 0" Width="250" Height="280"  CornerRadius="8">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth=".5" Color="#FFECEDF2"/>
+                </Border.Effect>
+                <StackPanel>
+                    <dx:DXImage Width="80" Height="50" Margin="0 10 0 0" Source="\Image\blue.png"/>
+                    <TextBlock Text="BLUE" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <TextBlock Text="14.2.0" FontWeight="Bold" Foreground="#FF2174D5" FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <TextBlock TextWrapping="Wrap" Text="This version is suitable for large-scale businesses that deal with an infinite number of branches, warehouses, and item types (inventory, collection, finished product, service, serial inventory, expiration date inventory, consignment goods, clothes and shoes)" FontWeight="Bold"  FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <dx:SimpleButton Width="180" Height="36" Margin="0 30 0 0" CornerRadius="8" Content="Download"  BorderBrush="#FF2174D5"/>
+                </StackPanel>
+            </Border>
+            <Border Background="#ffffff" Width="250" Height="280" Margin="40 0 0 0" CornerRadius="8">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth=".5" Color="#FFECEDF2"/>
+                </Border.Effect>
+                <StackPanel>
+                    <dx:DXImage Width="80" Height="50" Margin="0 10 0 0" Source="\Image\red.png"/>
+                    <TextBlock Text="RED" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <TextBlock Text="14.2.0" FontWeight="Bold" Foreground="#FF2174D5" FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <TextBlock TextWrapping="Wrap" Text="This version is suitable for large-scale businesses that deal with an infinite number of branches, warehouses, and item types (inventory, collection, finished product, service, serial inventory, expiration date inventory, consignment goods, clothes and shoes)" FontWeight="Bold"  FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <dx:SimpleButton Width="180" Height="36" Margin="0 30 0 0" CornerRadius="8" Content="Download"  BorderBrush="#FF2174D5"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <Grid Grid.Row="1" >
+            <Border Background="#FFEAECF2" Margin="0 20 0 200"/>
+
+            <StackPanel Orientation="Horizontal" Margin="40 20 40 0">
+                <Border VerticalAlignment="Top" Background="#ffffff" Width="250" Height="280" Margin="0 10 0 0"  CornerRadius="8">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth=".5" Color="#FFECEDF2"/>
+                    </Border.Effect>
+                    <StackPanel>
+                        <dx:DXImage Width="80" Height="50" Margin="0 10 0 0" Source="\Image\one.png"/>
+                        <TextBlock Text="GREEN" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                        <TextBlock Text="14.2.0" FontWeight="Bold" Foreground="#FF2174D5" FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                        <TextBlock TextWrapping="Wrap" Text="This version is suitable for large-scale businesses that deal with an infinite number of branches, warehouses, and item types (inventory, collection, finished product, service, serial inventory, expiration date inventory, consignment goods, clothes and shoes)" FontWeight="Bold"  FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                        <dx:SimpleButton Width="180" Height="36" Margin="0 30 0 0" CornerRadius="8" Content="Download" BorderBrush="#FF2174D5"/>
+                    </StackPanel>
+                </Border>
+
+                <Border VerticalAlignment="Top" Background="#ffffff" Margin="40 10 0 0" Width="250" Height="280"  CornerRadius="8">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth=".5" Color="#FFECEDF2"/>
+                    </Border.Effect>
+                    <StackPanel>
+                        <dx:DXImage Width="80" Height="50" Margin="0 10 0 0" Source="\Image\blue.png"/>
+                        <TextBlock Text="BLUE" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                        <TextBlock Text="14.2.0" FontWeight="Bold" Foreground="#FF2174D5" FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                        <TextBlock TextWrapping="Wrap" Text="This version is suitable for large-scale businesses that deal with an infinite number of branches, warehouses, and item types (inventory, collection, finished product, service, serial inventory, expiration date inventory, consignment goods, clothes and shoes)" FontWeight="Bold"  FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                        <dx:SimpleButton Width="180" Height="36" Margin="0 30 0 0" CornerRadius="8" Content="Download"  BorderBrush="#FF2174D5"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#ffffff" VerticalAlignment="Top" Width="250" Height="280" Margin="40 10 0 0" CornerRadius="8">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth=".5" Color="#FFECEDF2"/>
+                    </Border.Effect>
+                    <StackPanel>
+                        <dx:DXImage Width="80" Height="50" Margin="0 10 0 0" Source="\Image\red.png"/>
+                        <TextBlock Text="RED" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                        <TextBlock Text="14.2.0" FontWeight="Bold" Foreground="#FF2174D5" FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                        <TextBlock TextWrapping="Wrap" Text="This version is suitable for large-scale businesses that deal with an infinite number of branches, warehouses, and item types (inventory, collection, finished product, service, serial inventory, expiration date inventory, consignment goods, clothes and shoes)" FontWeight="Bold"  FontSize="9.25" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                        <dx:SimpleButton Width="180" Height="36" Margin="0 30 0 0" CornerRadius="8" Content="Download"  BorderBrush="#FF2174D5"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
